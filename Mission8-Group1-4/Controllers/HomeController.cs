@@ -23,7 +23,8 @@ namespace Mission8_Group1_4.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        //I added an Edit View Page here - Anna
+        public IActionResult Edit()
         {
             return View();
         }
@@ -33,5 +34,9 @@ namespace Mission8_Group1_4.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        //You'll need to add a controller for the Confirmation Page - Anna
+
+
     }
 }
