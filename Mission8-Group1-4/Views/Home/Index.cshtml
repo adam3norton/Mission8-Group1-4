@@ -4,29 +4,50 @@
 
 @model List<TaskList>
 
-<section style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;">
-    <div style="">
+<section style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px;">
+    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+        <h1>Quadrant 1</h1>
         @foreach (var x in Model)
         {
-            <h1>@x.Title</h1>
+            @if (x.Quadrant == 1)
+            {
+                <h3>@x.Title</h3>
+            }
         }
     </div>
-    <div>
+    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+        <h1>Quadrant 2</h1>
         @foreach (var x in Model)
         {
-            <h1>@x.Title</h1>
+            @if (x.Quadrant == 2)
+            {
+    <div style="display: grid; grid-template-columns: 1fr auto">
+        <h3>@x.Title</h3>
+        <h3></h3>
+    </div>
+                
+            }
+        }
+
+    </div>
+    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+        <h1>Quadrant 3</h1>
+        @foreach (var x in Model)
+        {
+            @if (x.Quadrant == 3)
+            {
+                <h3>@x.Title</h3>
+            }
         }
     </div>
-    <div>
+    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+        <h1>Quadrant 4</h1>
         @foreach (var x in Model)
         {
-            <h1>@x.Title</h1>
-        }
-    </div>
-    <div>
-        @foreach (var x in Model)
-        {
-            <h1>@x.Title</h1>
+            @if (x.Quadrant == 4)
+            {
+                <h3>@x.Title</h3>
+            }
         }
     </div>
 
