@@ -24,10 +24,6 @@ namespace Mission8_Group1_4.Controllers
             return View();
         }
 
-
-
-
-
         private TaskContext taskContext { get; set; }
 
         public HomeController(TaskContext somename)
@@ -42,17 +38,6 @@ namespace Mission8_Group1_4.Controllers
 
 
             return View(submittals);
-        }
-
-
-
-
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
         //You'll need to add a controller for the Confirmation Page - Anna
