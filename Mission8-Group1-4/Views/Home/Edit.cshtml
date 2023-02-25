@@ -10,6 +10,10 @@
 
         <div asp-validation-summary="All"></div>
 
+        <label hidden asp-for="TaskId"></label>
+        <input type="hidden" asp-for="TaskId" />
+
+
         <label asp-for="Title">Task:</label>
         <input asp-for="Title" />
         <br />
@@ -26,10 +30,10 @@
         <br />
         <label asp-for="CategoryId">Category:</label>
         <select asp-for="CategoryId">
-            <option value="G">Home</option>
-            <option value="PG">School</option>
-            <option value="PG-13">Work</option>
-            <option value="R">Church</option>
+            <option value="1">Home</option>
+            <option value="2">School</option>
+            <option value="3">Work</option>
+            <option value="4">Church</option>
         </select>
         <br />
         <label asp-for="Completed">Completed?</label>
