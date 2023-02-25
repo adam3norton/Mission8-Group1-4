@@ -3,60 +3,73 @@
 }
 
 @model List<TaskList>
+    <div>
+        <h1>Stephen Covey's Time Management Matrix</h1>
+    </div>
+
     <div style="padding: 20px;">
-        <h3>*Only displaying incomplete tasks. To see all tasks, see the table view.</h3>
+        <h5 style="color: #00000050">*Only displaying incomplete tasks. To see all tasks, see the <a asp-action="Quadrants">Table View</a>.</h5>
     </div>
 
 <section style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px;">
-    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+    <div style="border: 2px solid #000000; padding: 20px; border-radius: 12px; box-shadow: -4px 4px 0px #000000;">
         <h1>Quadrant 1</h1>
         @foreach (var x in Model)
         {
             @if (x.Quadrant == 1 && !x.Completed)
             {
-                <div style="display: grid; grid-template-columns: 1fr auto">
+                <div style="display: grid; grid-template-columns: 1fr auto; margin-bottom: 10px;">
                     <h3>@x.Title</h3>
-                    <h3>Due @x.DueDate.ToString("d")</h3>
+                    <div style="background: #f3e1e2; border-radius: 8px; padding: 12px; display: grid; place-items: center;">
+                        <p style="color: #d26360; margin: 0;">Due @x.DueDate.ToString("d")</p>
+                    </div>
+                    
                 </div>
             }
         }
     </div>
-    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+    <div style="border: 2px solid #000000; padding: 20px; border-radius: 12px; box-shadow: -4px 4px 0px #000000;">
         <h1>Quadrant 2</h1>
         @foreach (var x in Model)
         {
             @if (x.Quadrant == 2 && !x.Completed)
             {
-                <div style="display: grid; grid-template-columns: 1fr auto">
+                <div style="display: grid; grid-template-columns: 1fr auto; margin-bottom: 10px;">
                     <h3>@x.Title</h3>
-                    <h3>Due @x.DueDate.ToString("d")</h3>
+                    <div style="background: #f3e1e2; border-radius: 8px; padding: 12px; display: grid; place-items: center;">
+                        <p style="color: #d26360; margin: 0;">Due @x.DueDate.ToString("d")</p>
+                    </div>
                 </div>
             }
         }
 
     </div>
-    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+    <div style="border: 2px solid #000000; padding: 20px; border-radius: 12px; box-shadow: -4px 4px 0px #000000;">
         <h1>Quadrant 3</h1>
         @foreach (var x in Model)
         {
             @if (x.Quadrant == 3 && !x.Completed)
             {
-                <div style="display: grid; grid-template-columns: 1fr auto">
+                <div style="display: grid; grid-template-columns: 1fr auto; margin-bottom: 10px;">
                     <h3>@x.Title</h3>
-                    <h3>Due @x.DueDate.ToString("d")</h3>
+                    <div style="background: #f3e1e2; border-radius: 8px; padding: 12px; display: grid; place-items: center;">
+                        <p style="color: #d26360; margin: 0;">Due @x.DueDate.ToString("d")</p>
+                    </div>
                 </div>
             }
         }
     </div>
-    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+    <div style="border: 2px solid #000000; padding: 20px; border-radius: 12px; box-shadow: -4px 4px 0px #000000;">
         <h1>Quadrant 4</h1>
         @foreach (var x in Model)
         {
             @if (x.Quadrant == 4 && !x.Completed)
             {
-                <div style="display: grid; grid-template-columns: 1fr auto">
+                <div style="display: grid; grid-template-columns: 1fr auto; margin-bottom: 10px;">
                     <h3>@x.Title</h3>
-                    <h3>Due @x.DueDate.ToString("d")</h3>
+                    <div style="background: #f3e1e2; border-radius: 8px; padding: 12px; display: grid; place-items: center;">
+                        <p style="color: #d26360; margin: 0;">Due @x.DueDate.ToString("d")</p>
+                    </div>
                 </div>
             }
         }
