@@ -15,14 +15,29 @@ namespace Mission8_Group1_4.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var submittals = taskContext.tasks
+                .Include(i => i.Category)
+                .OrderBy(i => i.Quadrant)
+                .ToList();
+
+
+            return View(submittals);
         }
 
-        //I added an Edit View Page here - Anna
+        [HttpGet]
         public IActionResult Edit()
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Edit(TaskList tl)
+        {
+            taskContext.Update(tl);
+            taskContext.SaveChanges();
+            return RedirectToAction("Quadrants");
+        }
+
 
         private TaskContext taskContext { get; set; }
 
@@ -44,7 +59,7 @@ namespace Mission8_Group1_4.Controllers
 
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult EditTask(int id)
         {
             ViewBag.categories = taskContext.categories.ToList();
 
@@ -54,7 +69,7 @@ namespace Mission8_Group1_4.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(TaskList x)
+        public IActionResult EditTask(TaskList x)
         {
             if (ModelState.IsValid)
             {
@@ -68,8 +83,8 @@ namespace Mission8_Group1_4.Controllers
 
                 return View("Edit", x);
             }
-
         }
+
         [HttpGet]
         public IActionResult Delete(int id)
         {

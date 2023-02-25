@@ -10,8 +10,10 @@
 
         <div asp-validation-summary="All"></div>
 
-        <label hidden asp-for="TaskId"></label>
-        <input type="hidden" asp-for="TaskId" />
+        <!--
+    <input type="hidden" asp-for="TaskId" />
+        -->
+
 
 
         <label asp-for="Title">Task:</label>
@@ -47,3 +49,7 @@
         @*<input type="hidden" asp-for="" />*@
     </form>
 </div>
+
+<script>
+    console.log(@Html.Raw(Json.Serialize(Model)));
+</script>

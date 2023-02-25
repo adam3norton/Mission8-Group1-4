@@ -9,9 +9,9 @@ namespace Mission8_Group1_4.Models
     public class Category
     {
         [Key]
-        [Required]
+        [Required(ErrorMessage = "Please provide a value for CategoryID.")]
         public int CategoryId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please provide a value for Category Title.")]
         public string Title { get; set; }
     }
 }
