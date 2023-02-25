@@ -22,10 +22,10 @@
                 <td>@x.Title</td>
                 <td>@x.DueDate</td>
                 <td>@x.Quadrant</td>
-                <td>@x.Category</td>
+                <td>@x.Category.Title</td>
                 <td>@x.Completed</td>
 
-                <td><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.TaskId">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="EditTask" asp-route-id="@x.TaskId">Edit</a></td>
                 <td><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.TaskId">Delete</a></td>
             </tr>
         }

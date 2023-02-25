@@ -2,3 +2,64 @@
     ViewData["Title"] = "Task List";
 }
 
+@model List<TaskList>
+    <div style="padding: 20px;">
+        <h3>*Only displaying incomplete tasks. To see all tasks, see the table view.</h3>
+    </div>
+
+<section style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px;">
+    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+        <h1>Quadrant 1</h1>
+        @foreach (var x in Model)
+        {
+            @if (x.Quadrant == 1 && !x.Completed)
+            {
+                <div style="display: grid; grid-template-columns: 1fr auto">
+                    <h3>@x.Title</h3>
+                    <h3>Due @x.DueDate.ToString("d")</h3>
+                </div>
+            }
+        }
+    </div>
+    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+        <h1>Quadrant 2</h1>
+        @foreach (var x in Model)
+        {
+            @if (x.Quadrant == 2 && !x.Completed)
+            {
+                <div style="display: grid; grid-template-columns: 1fr auto">
+                    <h3>@x.Title</h3>
+                    <h3>Due @x.DueDate.ToString("d")</h3>
+                </div>
+            }
+        }
+
+    </div>
+    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+        <h1>Quadrant 3</h1>
+        @foreach (var x in Model)
+        {
+            @if (x.Quadrant == 3 && !x.Completed)
+            {
+                <div style="display: grid; grid-template-columns: 1fr auto">
+                    <h3>@x.Title</h3>
+                    <h3>Due @x.DueDate.ToString("d")</h3>
+                </div>
+            }
+        }
+    </div>
+    <div style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+        <h1>Quadrant 4</h1>
+        @foreach (var x in Model)
+        {
+            @if (x.Quadrant == 4 && !x.Completed)
+            {
+                <div style="display: grid; grid-template-columns: 1fr auto">
+                    <h3>@x.Title</h3>
+                    <h3>Due @x.DueDate.ToString("d")</h3>
+                </div>
+            }
+        }
+    </div>
+
+</section>
