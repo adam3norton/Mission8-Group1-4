@@ -82,7 +82,7 @@ namespace Mission8_Group1_4.Controllers
             taskContext.tasks.Remove(x1);
             taskContext.SaveChanges();
 
-            return RedirectToAction("Quadrants");
+            return RedirectToAction("Quadrants"); 
         }
 
 
