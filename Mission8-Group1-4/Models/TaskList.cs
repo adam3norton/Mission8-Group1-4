@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mission8_Group1_4.Models
 {
-    public class Task
+    public class TaskList
     {
         [Key]
         [Required]
