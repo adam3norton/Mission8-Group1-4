@@ -13,13 +13,13 @@ namespace Mission8_Group1_4.Models
             // blank for now
         }
 
-        public DbSet<Task> tasks { get; set; }
+        public DbSet<TaskList> tasks { get; set; }
         public DbSet<Category> categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
-            mb.Entity<Task>().HasData(
-                new Task
+            mb.Entity<TaskList>().HasData(
+                new TaskList
                 {
                     TaskId = 1,
                     Title = "Complete Mission 8",

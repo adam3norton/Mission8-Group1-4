@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission8_Group1_4.Models;
 using System;
@@ -11,12 +12,6 @@ namespace Mission8_Group1_4.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public IActionResult Index()
         {
@@ -29,11 +24,22 @@ namespace Mission8_Group1_4.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        private TaskContext taskContext { get; set; }
+
+        public HomeController(TaskContext somename)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            taskContext = somename;
         }
+        public IActionResult Quadrants()
+        {
+            var submittals = taskContext.tasks
+                .Include(i => i.Category)
+                .ToList();
+
+
+            return View(submittals);
+        }
+
 
         //You'll need to add a controller for the Confirmation Page - Anna
 
